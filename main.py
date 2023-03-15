@@ -57,13 +57,13 @@ stages = [r'''
 =========
 ''']
 
-word_list= ["cameroon", "baboon", "elephant", "cow", "dog", "White" ]
+word_list= ["cameroon", "baboon", "elephant", "cow", "dog", "White", "yellow", "orange", "black", "kenya", "python", "anaconda", "wave", "cartoon", "giraffe" ]
 
 chosen_word=random.choice(word_list)
 
 lives=6
 
-print(chosen_word)
+
 
 
 
