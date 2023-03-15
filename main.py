@@ -1,89 +1,29 @@
 import random
 
-stages = [r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list= ["cameroon", "baboon", "elephant", "cow", "dog", "White", "yellow", "orange", "black", "kenya", "python", "anaconda", "wave", "cartoon", "giraffe" ]
+from ASCII_art import stages
+from word_list import word_list
 
 chosen_word=random.choice(word_list)
 
 lives=6
-
-
-
-
-
 
 display=[]  
 for letter in chosen_word:
     display+="_"
 
 
-end_of_game=False     
+end_of_game=False
+     
 while not end_of_game :
    
-  guess= input("Guess a random letter:\n").lower()  
+  guess= input("Guess a random letter: ").lower()  
   if guess in display:
-    print("You have already guessed this letter")
+    print("\nYou have already guessed this letter")
  
   if guess not in chosen_word:
     lives-=1
-    print("You have guessed a letter that is not in the word" ) 
-    print(stages[lives])
+    print("\nYou have guessed a letter that is not in the word\n\n" ) 
+    print(f"You have {lives} live(s) left:\n" , stages[lives])
   
   for position in range(len(chosen_word)):
         letter=chosen_word[position]
@@ -96,8 +36,8 @@ while not end_of_game :
 
   if "_" not in display:
     end_of_game=True
-    print("You win") 
+    print("\nYou win 😱🤩🎉") 
   if lives == 0:
     end_of_game=True
     
-    print("You Lose!")
+    print("\nYou Lose! ☠️")
