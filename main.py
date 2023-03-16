@@ -1,8 +1,8 @@
 import random
 
-from ASCII_art import stages
+from ASCII_art import stages, logo
 from word_list import word_list
-
+print(logo)
 chosen_word=random.choice(word_list)
 
 lives=6
@@ -16,7 +16,7 @@ end_of_game=False
      
 while not end_of_game :
    
-  guess= input("Guess a random letter: ").lower()  
+  guess= input("\nGuess a random letter: ").lower()  
   if guess in display:
     print("\nYou have already guessed this letter")
  
@@ -41,3 +41,5 @@ while not end_of_game :
     end_of_game=True
     
     print("\nYou Lose! ☠️")
+    
+    print(f"\nThe correct answer was {chosen_word}")
